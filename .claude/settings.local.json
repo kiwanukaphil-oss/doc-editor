@@ -3,7 +3,13 @@
     "allow": [
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: initial project setup and documentation\n\n- Initialize git repository\n- Create comprehensive PROJECT_STATUS.md for developer continuity\n- Add full development roadmap (12-18 months)\n- Create README.md with project overview\n- Organize documentation in docs/ folder\n- Add .gitignore for Node.js project\n\nThis establishes the foundation for building a world-class document editor\ncombining Notion''s flexibility, Airtable''s power, and Apple Pages'' elegance.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init -p)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []
