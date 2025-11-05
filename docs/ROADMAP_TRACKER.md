@@ -63,39 +63,69 @@ This document tracks the systematic execution of the [complete roadmap](./doc_ed
 
 ---
 
-### Sprint 3: Design System & Core Components 🔄 IN PROGRESS
-**Status:** 🔄 In Progress
-**Duration:** Week 2
-**Progress:** 0%
+### Sprint 3: Design System & Core Components ✅ COMPLETED
+**Status:** ✅ Completed
+**Duration:** Week 2 (2025-11-05)
+**Progress:** 100%
 
 #### Deliverables
-- [ ] Design tokens file with all variables
-- [ ] Button component (primary, secondary, ghost variants)
-- [ ] Input component (text, textarea)
-- [ ] Card component
-- [ ] Modal/Dialog component
-- [ ] Toolbar component foundation
-- [ ] Icon system integrated (Lucide React)
-- [ ] Layout components (Sidebar, Header, Canvas)
+- [x] Design tokens file with all variables
+- [x] Button component (primary, secondary, ghost, danger variants)
+- [x] Input component (with label, error, helper text)
+- [x] Textarea component
+- [x] Card component (with sub-components)
+- [x] Icon system integrated (Lucide React)
+- [x] Layout components (Sidebar, Header, Canvas, AppLayout)
+- [ ] Modal/Dialog component (deferred to Sprint 5)
+- [ ] Toolbar component foundation (deferred to Sprint 5)
+
+#### What Was Completed
+- ✅ Created `src/lib/designTokens.ts` with comprehensive design system
+- ✅ Created `src/lib/utils.ts` with utility functions (cn, debounce, throttle)
+- ✅ Built Button component with 4 variants, 3 sizes, loading state
+- ✅ Built Input component with label, error handling, helper text
+- ✅ Built Textarea component with same features as Input
+- ✅ Built Card component with CardHeader, CardTitle, CardDescription, CardContent, CardFooter
+- ✅ Created Sidebar with collapsible functionality
+- ✅ Created Header with save, export, settings actions
+- ✅ Created Canvas (main content area) with document paper layout
+- ✅ Created AppLayout that brings all layout components together
+- ✅ Updated App.tsx with component showcase
+- ✅ All components use TypeScript with proper types
+- ✅ Integrated Lucide React for icons throughout
 
 #### Acceptance Criteria
-- [ ] All components have TypeScript types
-- [ ] Components are reusable and composable
-- [ ] Consistent styling across all components
-- [ ] Hover states and transitions working
-- [ ] Components tested in Storybook or dev environment
+- [x] All components have TypeScript types
+- [x] Components are reusable and composable
+- [x] Consistent styling across all components
+- [x] Hover states and transitions working
+- [x] Components tested in dev environment
 
-#### Key Components to Build
-```typescript
-// Priority order
-1. Layout (AppLayout, Sidebar, Header, Canvas)
-2. Button (with variants)
-3. Input & Textarea
-4. Toolbar (floating and fixed)
-5. Card
-6. Modal/Dialog
-7. Dropdown Menu
+#### Key Components Built
 ```
+src/lib/
+  - designTokens.ts           ✅ Complete design system
+  - utils.ts                  ✅ Utility functions
+
+src/components/ui/
+  - Button.tsx                ✅ 4 variants, 3 sizes, loading
+  - Input.tsx                 ✅ With label & validation
+  - Textarea.tsx              ✅ With label & validation
+  - Card.tsx                  ✅ With sub-components
+  - index.ts                  ✅ Barrel exports
+
+src/components/layout/
+  - Sidebar.tsx               ✅ Collapsible sidebar
+  - Header.tsx                ✅ Action buttons
+  - Canvas.tsx                ✅ Content area
+  - AppLayout.tsx             ✅ Main layout wrapper
+  - index.ts                  ✅ Barrel exports
+```
+
+#### Notes
+- Modal and Toolbar components deferred to Sprint 5 (when we build the rich text editor)
+- All core UI primitives are now in place
+- Ready to build document state management in Sprint 4
 
 ---
 
@@ -449,21 +479,28 @@ Before launching MVP, ensure ALL of these are working:
 
 ### Overall Project Progress
 ```
-Phase 1 (MVP):        [████░░░░░░░░░░░░░░░░] 15% (Sprint 1-2 complete)
+Phase 1 (MVP):        [██████░░░░░░░░░░░░░░] 23% (Sprint 1-3 complete)
 Phase 2 (Advanced):   [░░░░░░░░░░░░░░░░░░░░]  0%
 Phase 3 (Scale):      [░░░░░░░░░░░░░░░░░░░░]  0%
 Phase 4 (AI & More):  [░░░░░░░░░░░░░░░░░░░░]  0%
 ```
 
-### Current Sprint Breakdown
+### Sprint 3 Completed ✅
 **Sprint 3: Design System & Core Components**
 ```
-Layout Components:    [░░░░░░░░░░] 0%
-Button Component:     [░░░░░░░░░░] 0%
-Input Component:      [░░░░░░░░░░] 0%
-Toolbar Component:    [░░░░░░░░░░] 0%
-Design Tokens:        [░░░░░░░░░░] 0%
+Layout Components:    [██████████] 100% ✅
+Button Component:     [██████████] 100% ✅
+Input Component:      [██████████] 100% ✅
+Card Component:       [██████████] 100% ✅
+Design Tokens:        [██████████] 100% ✅
 ```
+
+### Next Sprint
+**Sprint 4: Document Structure & State Management**
+- Define TypeScript interfaces
+- Build Zustand store
+- Implement localStorage
+- Create document CRUD
 
 ---
 
