@@ -23,14 +23,14 @@ export class DocumentStorage {
       const documentsJson = localStorage.getItem(DOCUMENTS_KEY);
       if (!documentsJson) return [];
 
-      const documents = JSON.parse(documentsJson);
+      const documents = JSON.parse(documentsJson) as Array<Record<string, unknown>>;
 
       // Parse dates
-      return documents.map((doc: any) => ({
+      return documents.map((doc) => ({
         ...doc,
-        createdAt: new Date(doc.createdAt),
-        updatedAt: new Date(doc.updatedAt),
-      }));
+        createdAt: new Date(doc.createdAt as string),
+        updatedAt: new Date(doc.updatedAt as string),
+      })) as DocumentSummary[];
     } catch (error) {
       console.error('Error loading documents:', error);
       return [];
@@ -45,22 +45,22 @@ export class DocumentStorage {
       const documentJson = localStorage.getItem(`${DOCUMENT_KEY_PREFIX}${id}`);
       if (!documentJson) return null;
 
-      const document = JSON.parse(documentJson);
+      const document = JSON.parse(documentJson) as Record<string, unknown>;
 
       // Parse dates
       return {
         ...document,
         metadata: {
-          ...document.metadata,
-          createdAt: new Date(document.metadata.createdAt),
-          updatedAt: new Date(document.metadata.updatedAt),
+          ...(document.metadata as Record<string, unknown>),
+          createdAt: new Date((document.metadata as Record<string, unknown>).createdAt as string),
+          updatedAt: new Date((document.metadata as Record<string, unknown>).updatedAt as string),
         },
-        blocks: document.blocks.map((block: any) => ({
+        blocks: (document.blocks as Array<Record<string, unknown>>).map((block) => ({
           ...block,
-          createdAt: new Date(block.createdAt),
-          updatedAt: new Date(block.updatedAt),
+          createdAt: new Date(block.createdAt as string),
+          updatedAt: new Date(block.updatedAt as string),
         })),
-      };
+      } as Document;
     } catch (error) {
       console.error('Error loading document:', error);
       return null;
