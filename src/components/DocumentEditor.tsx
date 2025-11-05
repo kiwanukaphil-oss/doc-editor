@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useDocumentStore } from '@/stores/documentStore';
 import { Card, CardContent } from './ui';
 import { EditorWithToolbar } from './editor';
-import type { ParagraphContent } from '@/types/document';
+import { EditableTable } from './table';
+import type { ParagraphContent, TableContent } from '@/types/document';
 
 export default function DocumentEditor() {
   const currentDocument = useDocumentStore(state => state.currentDocument);
@@ -92,10 +93,15 @@ export default function DocumentEditor() {
                 />
               )}
 
-              {block.type === 'table' && (
-                <div className="text-gray-600">
-                  Table block (to be implemented in Sprint 7-8)
-                </div>
+              {block.type === 'table' && block.content && (
+                <EditableTable
+                  data={block.content as TableContent}
+                  onChange={(tableData) => {
+                    updateBlock(block.id, {
+                      content: tableData,
+                    });
+                  }}
+                />
               )}
 
               {!['paragraph', 'heading', 'table'].includes(block.type) && (

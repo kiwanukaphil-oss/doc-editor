@@ -122,6 +122,11 @@ export interface TableContent {
 }
 
 /**
+ * Table Data (alias for TableContent)
+ */
+export type TableData = TableContent;
+
+/**
  * List Item
  */
 export interface ListItem {
