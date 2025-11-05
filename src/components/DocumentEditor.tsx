@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
 import { useDocumentStore } from '@/stores/documentStore';
 import { Card, CardContent } from './ui';
+import { EditorWithToolbar } from './editor';
+import type { ParagraphContent } from '@/types/document';
 
 export default function DocumentEditor() {
   const currentDocument = useDocumentStore(state => state.currentDocument);
   const saveCurrentDocument = useDocumentStore(state => state.saveCurrentDocument);
   const updateDocumentTitle = useDocumentStore(state => state.updateDocumentTitle);
+  const updateBlock = useDocumentStore(state => state.updateBlock);
 
   // Auto-save every 30 seconds
   useEffect(() => {
@@ -62,14 +65,17 @@ export default function DocumentEditor() {
               </div>
 
               {block.type === 'paragraph' && block.content && (
-                <textarea
-                  defaultValue={(block.content as any).text || ''}
-                  placeholder="Start typing..."
-                  className="w-full min-h-[100px] text-gray-900 bg-transparent border-none outline-none resize-y"
-                  onBlur={(e) => {
-                    // TODO: Update block content
-                    console.log('Block updated:', e.target.value);
+                <EditorWithToolbar
+                  content={(block.content as ParagraphContent).html || (block.content as ParagraphContent).text || ''}
+                  onChange={(html) => {
+                    updateBlock(block.id, {
+                      content: {
+                        text: html.replace(/<[^>]*>/g, ''), // Strip HTML for text
+                        html,
+                      } as ParagraphContent,
+                    });
                   }}
+                  placeholder="Start typing..."
                 />
               )}
 
