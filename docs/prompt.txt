@@ -1,0 +1,143 @@
+You are a world-class UI/UX designer and front-end architect tasked with designing a modern, flexible, and elegant document editor system.
+The goal is to create an interface that combines the fluid text editing of Notion with the granular table customization of Airtable or Google Sheets, all wrapped in a clean, modern, and classy visual aesthetic.
+
+🧠 Overall Concept
+
+Design a document workspace where users can effortlessly create and style reports — including text sections, financial tables, headers, and footers — with total creative control.
+The interface should feel like a hybrid of Notion + Airtable + Apple Pages, combining power with simplicity and elegance.
+
+🎯 Core Objectives
+
+Deliver exceptional UX — smooth, intuitive, and delightful.
+
+Deliver world-class UI design — minimalist, premium, and visually balanced.
+
+Focus on text flexibility, table customization, and template reusability.
+
+🧩 Functional Areas to Design
+
+Main Workspace
+
+Clean, white or dark-neutral background with subtle shadows.
+
+Central editable document area.
+
+Floating formatting toolbar that appears on text or table selection.
+
+Text Editing Zone
+
+Notion-style inline text editor:
+
+Supports bold, italic, underline, strikethrough, inline color, and background highlight.
+
+Headers (H1–H6), bullet & numbered lists, quotes, dividers.
+
+Custom fonts, font sizes, and color palettes.
+
+Support headers, footers, and flexible page numbering.
+
+Option to insert page breaks and table of contents dynamically.
+
+Table Editor Zone
+
+Excel/Airtable-inspired table with full customization:
+
+Adjustable row height and column width.
+
+Per-cell font size, text color, background color.
+
+Editable borders (color, thickness, and side selection).
+
+Row-level styling (e.g., bold totals, shaded subtotals).
+
+Ability to drag-and-drop rows to reorder.
+
+Collapsible row hierarchy (Levels L0–L3).
+
+Inline tooltips for quick edit.
+
+Live preview of row formatting as it’s applied.
+
+Template System
+
+Sidebar or modal for selecting pre-made templates (e.g., Balance Sheet, Income Statement, Cash Flow Statement, Project Report).
+
+Users can edit templates, save new ones, and reapply them later.
+
+Include a preview gallery of templates with thumbnails.
+
+Toolbar & Actions
+
+Sleek, contextual toolbar with icons for:
+
+Text styling (bold, italic, underline, color picker).
+
+Table actions (insert row, merge cell, align, border).
+
+Document-level actions (export, undo/redo, templates, save).
+
+Floating toolbar with soft hover animations and rounded corners.
+
+Icons from Lucide or Material icons, monochrome style.
+
+Export and Document Controls
+
+Top-right export button (PDF, JSON, or template).
+
+Optional “Presentation Mode” that hides editing controls.
+
+Auto-save indicator and version info subtly displayed.
+
+🎨 Visual Style & Aesthetic
+
+Color palette: whites, light grays, soft blues, subtle gradients.
+(Dark mode variant with charcoal gray and desaturated blues.)
+
+Typography: modern sans-serif (e.g., Inter, SF Pro, or Poppins).
+
+Design tone: premium, clean, confident — think Linear.app, Apple Pages, or Notion.
+
+Components: rounded corners (12–16px), light shadows, clean spacing.
+
+Micro-interactions: gentle hover effects, smooth transitions, contextual tooltips.
+
+💡 Experience Notes
+
+Every interaction should feel smooth and instant.
+
+Customization options should appear contextually (not cluttered).
+
+Use subtle animations for dropdowns, toolbars, and drag operations.
+
+Maintain pixel-perfect alignment and consistent spacing rhythm.
+
+The user should feel like they are using a professional creative tool, not a spreadsheet.
+
+🧱 Deliverables to Generate
+
+When generating the prototype or design, include:
+
+A full mockup or layout of the workspace.
+
+Example text editing section (like a report introduction).
+
+Example table section with editable rows and styling toolbar.
+
+Template selector preview (with sample financial templates).
+
+Toolbar and sidebar visuals with icons and tooltips.
+
+🔧 Optional Enhancements
+
+Add draggable blocks (like Notion).
+
+Inline comment or annotation system.
+
+Custom branding (logo, color theme).
+
+Adaptive layout for tablets.
+
+✨ Goal
+
+Produce a stunning, modern, and intuitive user interface for a next-generation document & report editor —
+a system that feels as flexible as Notion, as powerful as Airtable, and as elegant as Apple.
