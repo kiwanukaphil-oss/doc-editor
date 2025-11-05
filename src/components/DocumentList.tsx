@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 import { FileText, Trash2, Clock } from 'lucide-react';
 import { useDocumentStore } from '@/stores/documentStore';
 import { formatDate } from '@/lib/utils';
-import { Button } from './ui';
-import { Card } from './ui/Card';
+import { Button, Card } from './ui';
 
 export default function DocumentList() {
   const documents = useDocumentStore(state => state.documents);
