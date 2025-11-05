@@ -36,11 +36,11 @@ export function generateId(): string {
 /**
  * Debounce function
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: ReturnType<typeof setTimeout> | null = null;
 
   return function executedFunction(...args: Parameters<T>) {
     const later = () => {
@@ -58,7 +58,7 @@ export function debounce<T extends (...args: any[]) => any>(
 /**
  * Throttle function
  */
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
