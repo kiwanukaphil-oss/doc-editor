@@ -1,9 +1,9 @@
 # 📊 Project Status & Developer Guide
 
-**Last Updated:** 2025-11-05 (Initial Setup Complete)
+**Last Updated:** 2025-11-05 (Tailwind v4 Configuration Fixed)
 **Current Phase:** Phase 1 - Foundation & Setup
 **Repository:** https://github.com/kiwanukaphil-oss/doc-editor
-**Dev Server:** http://localhost:5174 (when running `npm run dev`)
+**Dev Server:** http://localhost:5173+ (when running `npm run dev`)
 
 ---
 
@@ -25,7 +25,8 @@ Building a world-class document editor that combines:
 - [x] Git repository initialized and connected to GitHub
 - [x] Documentation organized (README, PROJECT_STATUS, roadmap)
 - [x] React 18 + TypeScript + Vite project initialized
-- [x] Tailwind CSS configured with custom design tokens
+- [x] Tailwind CSS v4 configured with @tailwindcss/postcss plugin
+- [x] Custom design tokens defined (@theme with colors, fonts, spacing)
 - [x] Project folder structure created
 - [x] Core dependencies installed:
   - TipTap (rich text editor)
@@ -34,6 +35,7 @@ Building a world-class document editor that combines:
   - Lucide React (icons)
 - [x] Development server tested and working
 - [x] ESLint and TypeScript configured
+- [x] Fixed Tailwind CSS v4 PostCSS configuration issue
 
 ### 🔄 In Progress
 - [ ] Building design system foundation (colors, typography, components)
@@ -335,7 +337,15 @@ interface Row {
 ## 🐛 Known Issues & Blockers
 
 ### Current Blockers
-- None (project just started)
+- None
+
+### Resolved Issues
+- ✅ **Tailwind CSS PostCSS Error (2025-11-05)**: Initial setup used Tailwind CSS v4.1.16 which requires `@tailwindcss/postcss` plugin instead of direct `tailwindcss` in PostCSS config. Fixed by:
+  - Installing `@tailwindcss/postcss` package
+  - Updating `postcss.config.js` to use `@tailwindcss/postcss`
+  - Converting CSS from `@tailwind` directives to `@import "tailwindcss"`
+  - Using `@theme` for custom design tokens (Tailwind v4 syntax)
+  - Removing old `tailwind.config.js` (v4 uses CSS-based configuration)
 
 ### Technical Debt
 - None yet
