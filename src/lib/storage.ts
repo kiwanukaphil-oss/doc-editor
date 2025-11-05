@@ -230,9 +230,13 @@ export class DocumentStorage {
     let used = 0;
 
     // Calculate used storage
-    for (let key in localStorage) {
-      if (key.startsWith(STORAGE_PREFIX)) {
-        used += localStorage[key].length * 2; // UTF-16 uses 2 bytes per char
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith(STORAGE_PREFIX)) {
+        const value = localStorage.getItem(key);
+        if (value) {
+          used += value.length * 2; // UTF-16 uses 2 bytes per char
+        }
       }
     }
 

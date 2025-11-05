@@ -77,7 +77,7 @@ export interface ParagraphContent {
  * Table Cell
  */
 export interface TableCell {
-  value: any;
+  value: string | number | boolean | null;
   formula?: string;
   styles?: {
     fontWeight?: number;
